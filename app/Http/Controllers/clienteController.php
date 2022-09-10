@@ -17,9 +17,7 @@ class clienteController extends Controller
     public function index()
     {
         $clientes = cliente::all();
-        return response()->json([
-            'clientes' => $clientes
-        ]);
+        return response()->json($clientes);
     }
 
     /**
@@ -64,10 +62,7 @@ class clienteController extends Controller
     public function show($id_cliente)
     {
         $id_cliente = cliente::find($id_cliente);
-        return response()->json([
-            'message' => "client found!",
-            'cliente' => $id_cliente
-        ], 200);
+        return response()->json($id_cliente, 200);
     }
 
     /**
@@ -82,7 +77,7 @@ class clienteController extends Controller
         $id_cliente->update($request->all());
 
         return response()->json([
-            'message' => "cliente updated successfully!",
+            'message' => "Datos Actualizados!",
             'cliente' => $id_cliente
         ], 200);
     }

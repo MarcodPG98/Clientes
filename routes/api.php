@@ -22,5 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group([
 ], function ($router) {
-    Route::apiResource('cliente', clienteController::class);
+    Route::apiResource('client', clienteController::class);
 });
